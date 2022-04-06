@@ -1,6 +1,6 @@
 # Math to image 📏
 
-![](https://raw.githubusercontent.com/SkwalExe/math-to-image/main/images/gif.gif)
+![](https://github.com/SkwalExe/math-to-image/raw/main/images/gif.gif)
 
 📏 Math to image conversion tool for websites that don't support LaTex rendering like github.
 
@@ -17,15 +17,15 @@ ext install Skwal.math-to-image
 
 Select your LaTeX code : 
 
-![](https://raw.githubusercontent.com/SkwalExe/math-to-image/main/images/1.png)
+![](https://github.com/SkwalExe/math-to-image/raw/main/images/1.png)
 
 Then press `Ctrl+p` and type `Convert math to image`
 
-![](https://raw.githubusercontent.com/SkwalExe/math-to-image/main/images/2.png)
+![](https://github.com/SkwalExe/math-to-image/raw/main/images/2.png)
 
 After that, click enter to convert your code.
 
-![](https://raw.githubusercontent.com/SkwalExe/math-to-image/main/images/3.png)
+![](https://github.com/SkwalExe/math-to-image/raw/main/images/3.png)
 
 # Settings 🔧
 
@@ -41,7 +41,7 @@ Press `Ctrl+p` and type `Convert math to image`, then click on the gear icon.
 
 Click on `keybinding` and type your shortcut 
 
-![](https://raw.githubusercontent.com/SkwalExe/math-to-image/main/images/4.png)
+![](https://github.com/SkwalExe/math-to-image/raw/main/images/4.png)
 
 # Change log 📝
 
