@@ -1,0 +1,10 @@
+*/**
+*
+
+!.vscodeignore
+!extension.js
+!CHANGELOG.md
+!LICENSE
+!package.json
+!README.md
+!package-lock.json
