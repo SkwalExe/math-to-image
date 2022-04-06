@@ -7,4 +7,5 @@
 !LICENSE
 !package.json
 !README.md
+!**/images/**
 !package-lock.json
