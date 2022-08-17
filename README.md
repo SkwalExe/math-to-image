@@ -29,10 +29,15 @@ After that, click enter to convert your code.
 
 ## Settings 🔧
 
-You can change the default color in which the math will be rendered, with the `color` option in your `settings.json`
+The following configuration options are available in the `.vscode/settings.json` of your workspace.
+
+- You can change the default color in which the math will be rendered, with the `color` option.
+
+- You can change the default style applied to the `<img>` tags. Defaults to `null` for no styling.
 
 ```json
 "math-to-image.color": "white"
+"math-to-image.style": "transform: translateY(-0.1rem);"
 ```
 
 ## Setting up a shortcut 🔧
