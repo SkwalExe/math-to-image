@@ -2,25 +2,26 @@ const vscode = require('vscode');
 
 const remote = "https://latex.codecogs.com/svg.image?";
 
-function genHtml(url) {
-    return `<img src="${url}" />`;
-
+function genHtml(url, style = null) {
+    return `<img src="${url}" ${style ? "style=" + '"' + style + '"' : ""}/>`;
 }
 
 function renderMath(math, inline) {
 
     var defaultColor = vscode.workspace.getConfiguration().get('math-to-image.color') || 'White';
+    var imgStyle = vscode.workspace.getConfiguration().get('math-to-image.style') || null;
 
     var encodedMath = encodeURIComponent(math);
     var url = remote + (inline ? "\\small%20" : "") + "\\color{" + defaultColor + "}" + encodedMath;
-    return genHtml(url);
+    return genHtml(url, imgStyle);
 
 }
 
 function activate(context) {
 
+    vscode.CompletionItem("math-to-image", vscode.CompletionItemKind.Snippet).insertText = "$$$1$$";
 
-    let disposable = vscode.commands.registerCommand('math-to-image.mathToImage', function() {
+    let disposable = vscode.commands.registerCommand('math-to-image.mathToImage', function () {
         var editor = vscode.window.activeTextEditor;
         if (!editor) {
             vscode.window.showErrorMessage('No editor is active.');
@@ -45,7 +46,7 @@ function activate(context) {
         if (multiLine.test(text)) {
 
             var equation = text.split('\n').slice(1, -1).join('\n');
-            editor.edit(function(editBuilder) {
+            editor.edit(function (editBuilder) {
                 editBuilder.insert(selectionStart, '<!-- ');
                 editBuilder.insert(selectionEnd, ' -->\n' + renderMath(equation, false));
 
@@ -54,7 +55,7 @@ function activate(context) {
 
 
             var equation = text.slice(1, -1).trim();
-            editor.edit(function(editBuilder) {
+            editor.edit(function (editBuilder) {
                 editBuilder.insert(selectionStart, ' <!-- ');
                 editBuilder.insert(selectionEnd, ' --> ' + renderMath(equation, true));
 
@@ -69,7 +70,7 @@ function activate(context) {
     context.subscriptions.push(disposable);
 }
 
-function deactivate() {}
+function deactivate() { }
 
 module.exports = {
     activate,
